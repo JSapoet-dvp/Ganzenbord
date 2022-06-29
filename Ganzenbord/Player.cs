@@ -13,10 +13,10 @@ namespace Ganzenbord
 
         public int Score { get; set; }
 
-        public Player(string name, int spotNum)
+        public Player(string name)
         {
             Name = name.ToUpper();
-            SpotNum = spotNum;
+            SpotNum = 0;
             Score = 0;
         }
     }

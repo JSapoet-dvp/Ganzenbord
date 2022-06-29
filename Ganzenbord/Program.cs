@@ -44,8 +44,8 @@ Console.Write("Hello player 1, please type your name: ");
 string name1 = Console.ReadLine().Trim();
 Console.Write("Hello player 2, please type your name: ");
 string name2 = Console.ReadLine().Trim();
-Player p1 = new Player(name1, 0);
-Player p2 = new Player(name2, 0);
+Player p1 = new Player(name1);
+Player p2 = new Player(name2);
 Console.WriteLine($"Let's play, {p1.Name} and {p2.Name}!");
 
 ContinueNextTurn();
@@ -69,7 +69,7 @@ void Play(int spotNum)
             p2.SpotNum = spotNum;
         }
     } else {
-        Console.WriteLine("You didn't type 't'. Sorry, you lost your turn..");
+        Console.WriteLine("You didn't type 't' for 'throw'. Sorry, you lost your turn..");
     }
     ContinueNextTurn();
 }
