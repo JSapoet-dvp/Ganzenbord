@@ -44,8 +44,8 @@ Console.Write("Hello player 1, please type your name: ");
 string name1 = Console.ReadLine().Trim();
 Console.Write("Hello player 2, please type your name: ");
 string name2 = Console.ReadLine().Trim();
-Player p1 = new Player(name1);
-Player p2 = new Player(name2);
+Player p1 = new(name1);    // Player p1 = new Player(name1);
+Player p2 = new(name2);    //Player p2 = new Player(name2);
 Console.WriteLine($"Let's play, {p1.Name} and {p2.Name}!");
 
 ContinueNextTurn();
@@ -59,7 +59,7 @@ void Play(int spotNum)
     if (throwCommand == "t")
     {
         throwResult = throwDice();
-        spotNum = spotNum + throwResult;
+        spotNum += throwResult;
         Console.WriteLine($"\nYou threw {throwResult}, you're on {spotNum}");
         spotNum = applyRules(spotNum);
         if (turn == 1)
@@ -167,7 +167,7 @@ void GetScore(bool winner)
 
 int throwDice()
 {
-    Random randomDice = new Random();
+    Random randomDice = new();     // Random randomDice = new Random();
     int dice = randomDice.Next(1, 7);
     return dice;
 }
